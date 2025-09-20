@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model character {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  edad   Int?
+  imagen String?
+}
+
+model productos {
+  id     Int     @id @default(autoincrement())
+  nombre String  @db.VarChar(100)
+  precio Decimal @db.Decimal(10, 2)
+}
+
+model waifus {
+  id       Int     @id @default(autoincrement())
+  nombre   String
+  codename String
+  persona  String
+  imagen   String?
+}
+
+model waifusnext {
+  id         Int    @id @default(autoincrement())
+  nombre     String @db.VarChar(100)
+  codename   String @db.VarChar(100)
+  persona    String @db.VarChar(100)
+  imagen_url String
+}
