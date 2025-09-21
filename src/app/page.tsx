@@ -91,7 +91,7 @@ export default function HomePage() {
         method: 'POST',
         body: fd,
       })
-      if (!res.ok) throw new Error('Error creando waifu')
+      if (!res.ok) throw new Error('Error creando personaje')
 
       setForm({ nombre: '', edad: '', imagen: null })
       fetchWaifus()
@@ -104,13 +104,13 @@ export default function HomePage() {
 
   // Handle delete waifu
   const handleDelete = async (id: number) => {
-    if (!confirm('¿Seguro quieres eliminar esta waifu?')) return
+    if (!confirm('¿Seguro quieres eliminar este personaje?')) return
     setLoading(true)
     setError(null)
 
     try {
       const res = await fetch(`/api/characters/${id}`, { method: 'DELETE' })
-      if (!res.ok) throw new Error('Error eliminando waifu')
+      if (!res.ok) throw new Error('Error eliminando pweaonJW')
       fetchWaifus()
     } catch (err) {
       setError((err as Error).message)
