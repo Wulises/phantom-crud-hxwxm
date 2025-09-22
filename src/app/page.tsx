@@ -170,7 +170,7 @@ export default function HomePage() {
         transition={{ duration: 0.8 }}
         className="text-center text-5xl font-display text-haruPurple mb-12"
       >
-        Phantom Confidants
+        Personajes
       </motion.h1>
 
       {error && (
